@@ -2,11 +2,15 @@
 layout: page
 title: About
 permalink: /about/
-feature-img: "img/sample_feature_img_2.png"
 ---
 
-Type Theme is a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+This is where I host my semi-technical blog. It isn't meant to be taken very seriously,
+but I like to think I'm capable of writing something that could be useful to others.
 
-Head over to the [theme's documentation](https://rohanchandra.github.io/project/type/) for much more information about Type Theme or to install this theme on your own Jekyll site.
+I'm currently a software engineer at Airware, acting as technical lead for the UI team. 
+This mostly includes attending meetings, making sure everyone makes me look good, and 
+reading Reddit/Hackernews.
 
-This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.
+This is the fourth platform for my blog. The second was on my own engine (LameBlog) I built 
+to learn NodeJS, and since it was my first project in node and node was pretty rough back 
+then so it was mostly terrible. Hopefully Jekyll works for me for a while.

@@ -1,0 +1,8 @@
+---
+layout: post
+title: Cookie Forwarding and Load Balancers with ASP.NET
+date: 2009-10-19 23:17:29.000000000 -08:00
+---
+Recently ran into a problem with cookie forwarding and a load balancer that flared up when the Google Search Appliance was tied in. Now this wasn't a very expensive implementation, lacking a session state tool like ScaleOut Server, so the load balancer was set to sticky session. This normally works fine, except when the GSA was thrown in the mix. The problem was simple, but I somehow we managed to miss it. The client had setup the GSA to index protected content, and set the sample login to a protected url on the server and turned on cookie forwarding for authentication. For those that are not familiar, the GSA handles searches on protected content by forwarding all cookies from the browser that match those that are needed by the sample login url when a user requests a search with protected results. This is done for each search result that is protected and if any return a 302 (or whatever) then the GSA will redirect the user to the website's login page.
+
+Now all the cookie domains and such were setup right and the .AUTH cookies were going through. Unfortunately, we forgot that the GSA won't pass along the load balancer cookies (or perhaps this particular load balancer didn't use cookies), resulting in the cookies being sent to a different server than the user was on, so auth would still fail in the end anyway. What really made it tough was it was a 50/50 chance that it would fail. We haven't solved the issue for real yet, we're currently running the load balancer in failover mode, but I imagine we'd have to use some session storage, either the out of the box one or using SQL.
