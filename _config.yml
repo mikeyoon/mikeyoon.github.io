@@ -6,7 +6,7 @@ url: "http://www.yaki.org" # the base hostname & protocol for your site
 theme:
   # Meta
   title: Mike's Musings
-  avatar: avatar.png
+  avatar: 
   gravatar: # Email MD5 hash
   description: >
     My semi-technical blog about stuff I feel like writing about.
