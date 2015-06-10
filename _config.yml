@@ -69,9 +69,12 @@ paginate_path: "/page:num"
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: pygments
+syntax-highlighting:
+  enabled : true
+  css: syntax.css
 kramdown:
   input: kramdown
-  syntax_highlighter: rouge
+  syntax_highlighter: pygments
 sass:
   sass_dir: _sass
   style: :compressed
