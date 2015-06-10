@@ -29,9 +29,11 @@ public virtual void GutterGame()
     #line hidden
     testRunner.CollectScenarioErrors();
 }
+```
 
 Then you would have to implement a steps class that would contain the following functions:
 
+```csharp
 [Given(@"a new bowling game")]
 public void GivenANewBowlingGame()
 {
