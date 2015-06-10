@@ -67,8 +67,7 @@ paginate: 8
 paginate_path: "/page:num"
 
 # BUILD SETTINGS
-markdown: kramdown
-highlighter: pygments
+markdown: redcarpet
 syntax-highlighting:
   enabled : true
   css: syntax.css
