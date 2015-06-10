@@ -9,13 +9,11 @@ theme:
   avatar: 
   gravatar: # Email MD5 hash
   description: >
-    My semi-technical blog about stuff I feel like writing about.
-    Sample topics include things like how much I like statically-typed
-    languages and dislike NodeJS.
+    Spreading positive vibes and optimism through efficient use of sarcasm and lowered expectations.
   
   # Header and footer text
-  # header_text: >
-  #   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  header_text: >
+    <p>Spreading positive vibes and optimism through efficient use of sarcasm and lowered expectations.</p>
   #
   #   <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
   # header_text_feature_image:
@@ -71,6 +69,9 @@ paginate_path: "/page:num"
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: pygments
+kramdown:
+  input: kramdown
+  syntax_highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed

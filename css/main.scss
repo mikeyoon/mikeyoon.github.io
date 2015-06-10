@@ -16,3 +16,31 @@
 // Partials
 @import 'includes/header';
 @import 'includes/footer';
+
+div.highlighter-rouge {
+	overflow: auto;
+	
+}
+
+pre.highlight {
+	//border-top: 1px solid rgba(250,231,179,.8);
+	//border-bottom: 1px solid rgba(250,231,179,.8);
+	//border-right: 1px solid rgba(250,231,179,.8);
+	border-left: 6px solid #558abb;
+	background-color: #fafafb;
+	background-image: url(/img/blueprint-dark.png);
+	background-repeat: repeat;
+	background-position: 0 0,0 0,0 0;
+	padding: 8px;
+	padding-top: 0px;
+	word-wrap: normal;
+	margin-top: 0px;
+}
+
+code {
+	font-size: .6em;
+	line-height: 100%;
+	font-family: Consolas,Monaco,'Andale Mono',monospace;
+	margin-bottom: 4px;
+	// rgba(222,98,98,.2);
+}

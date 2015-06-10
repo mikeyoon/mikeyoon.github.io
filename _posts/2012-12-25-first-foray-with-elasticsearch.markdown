@@ -7,16 +7,18 @@ Recently at work I've been tasked with migrating from our hosted Endeca solution
 
 Biggest issue I had with ElasticSearch was that its faceting was kind of weak. The benefit is that its faceting is really easy to use. You just tell ES what field you want to facet in your query and it will return a facet for it on the fly. Very convenient. The downside is that it's pretty barebones in what you can configure, and what it will return. For example, imagine you have a collection of Events, and it has a field called Category, and it had values like "sports" or "music". If you query the collection and facet Category, you'll get something like this (the syntax isn't exact):
 
-    termFacet: [ {
-        category: [{
-            term: sports,
-            count: 40
-        },
-        {
-            term: music,
-            count: 20
-        ]
-    } ]
+``` json
+termFacet: [ {
+    category: [{
+        term: sports,
+        count: 40
+    },
+    {
+        term: music,
+        count: 20
+    ]
+} ]
+```
 
 Pretty straightforward, but since that's all you get, it's pretty limiting. You can filter the facets, of course, but since all you get are the terms, that's what you have to pass to ES. You can't assign an ID to terms, so if you had a really long facet term, you'd have to submit that whole string, which can be pretty awful depending on your UI. I worked around it by hashing the terms, which isn't perfect and can be a little dangerous if there's a collision, but it worked sort of OK.
 
