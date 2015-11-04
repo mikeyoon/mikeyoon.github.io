@@ -37,9 +37,8 @@ which requires you code to an interface. It is a bit awkward and tedious that yo
 create an entire mock struct, but overall not too bad.
 
 Overall, I'd recommend Go for most applications where NodeJS/Express is being considered,
-unless you need to do view isomorphism. Due to its simlicity, I can't recommend it for 
-more advanced applications like data analysis of unstructured data. I'll probably end up
-using Go again in the future for other similar projects.
+unless you need to do view isomorphism. Due to its simplicity, I can't recommend it for 
+more advanced applications like data analysis of unstructured data. If I can, I'll definitely try to use Go in the future for new backend work.
 
 <!---
 Like most langauges/frameworks/etc, Go has focused on a few key aspects, sometimes at the
