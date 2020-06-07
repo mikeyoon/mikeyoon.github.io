@@ -82,7 +82,7 @@ syntax-highlighting:
   css: syntax.css
 kramdown:
   input: kramdown
-  syntax_highlighter: pygments
+  syntax_highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
