@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.yaki.org" # the base hostname & protocol for your site
+url: "https://www.yaki.org" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
@@ -75,7 +75,7 @@ paginate: 8
 paginate_path: "/page:num"
 
 # BUILD SETTINGS
-markdown: kramdown
+markdown: redcarpet
 highlighter: rouge
 kramdown:
   input: kramdown
