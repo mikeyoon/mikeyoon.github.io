@@ -16,10 +16,11 @@ article {
   }
   header {
     margin-bottom: 6%;
-    text-align: center;
+    text-align: left;
   }
   a {
     @extend .body-link;
+    text-decoration: underline;
   }
   .footnotes {
     font-size: 0.9em;
