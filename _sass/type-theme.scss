@@ -18,29 +18,3 @@
 @import 'includes/footer';
 @import 'includes/tag_list';
 @import 'includes/post_nav';
-
-div.highlighter {
-	overflow: auto;
-}
-
-div.highlight > pre {
-	//border-top: 1px solid rgba(250,231,179,.8);
-	//border-bottom: 1px solid rgba(250,231,179,.8);
-	//border-right: 1px solid rgba(250,231,179,.8);
-	border-left: 6px solid #558abb;
-	background-color: #fafafb;
-	background-image: url(/assets/img/blueprint-dark.png);
-	background-repeat: repeat;
-	background-position: 0 0,0 0,0 0;
-	padding: 8px;
-	padding-top: 0px;
-	word-wrap: normal;
-	margin-top: 0px;
-}
-
-pre.syntax code {
-	font-size: .7em;
-	line-height: 100%;
-	font-family: Consolas,Monaco,'Andale Mono',monospace;
-	// rgba(222,98,98,.2);
-}
