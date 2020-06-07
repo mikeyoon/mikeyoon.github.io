@@ -78,8 +78,10 @@ paginate_path: "/page:num"
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  input: kramdown
-  syntax_highlighter: rouge
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class   : 'syntax'
 sass:
   sass_dir: _sass
   style: :compressed
