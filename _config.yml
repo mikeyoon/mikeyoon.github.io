@@ -77,9 +77,6 @@ paginate_path: "/page:num"
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: rouge
-syntax-highlighting:
-  enabled : true
-  css: syntax.css
 kramdown:
   input: kramdown
   syntax_highlighter: rouge
