@@ -5,6 +5,8 @@ date: 2013-12-14 21:58:15.000000000 -08:00
 ---
 Coming from a web background (ASP.NET), tackling WPF was a lot more of a learning curve than I expected. I am glad to have this experience, and look forward to doing some Android development with Xamarin. Here are some notable things I've learned over this past year of writing a WPF app.
 
+<!--more-->
+
 1. Lots of state. Web usually is sort of the opposite, although heavy JS apps are getting close. It's interesting have to manage so many bits of information.
 
 1. XAML Styles don't inherit like in CSS, so you end up having to specify a lot of styles (which are like CSS classes) for each type of element. Also, elements can't reference multiple styles, which means even more style definitions. Maybe it'd be possible to make a domain specific language like SASS or LESS that would compile to XAML. Probably not enough of a market to warrant the effort though.

@@ -5,6 +5,8 @@ date: 2012-12-12 23:00:11.000000000 -08:00
 ---
 Recently at work I've been tasked with migrating from our hosted Endeca solution to ElasticSearch. We chose ElasticSearch because it's free, is easy to setup, has easy replication, has facet support out of the box, and has good .NET libraries available. The migration is now done for the most part and I'm happy with the results, but it wasn't all smooth sailing.
 
+<!--more-->
+
 Biggest issue I had with ElasticSearch was that its faceting was kind of weak. The benefit is that its faceting is really easy to use. You just tell ES what field you want to facet in your query and it will return a facet for it on the fly. Very convenient. The downside is that it's pretty barebones in what you can configure, and what it will return. For example, imagine you have a collection of Events, and it has a field called Category, and it had values like "sports" or "music". If you query the collection and facet Category, you'll get something like this (the syntax isn't exact):
 
 ``` json

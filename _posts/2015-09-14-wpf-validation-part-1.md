@@ -3,12 +3,15 @@ layout: post
 title: Implementing INotifyDataErrorInfo for complex models in WPF
 date: 2015-09-14 22:55:57.000000000 -07:00
 ---
+
 This is part one of a two part series, in which I'll detail an effective approach for architecting a
 validation framework for complex objects in WPF. In this part, I'll talk about what is necessary to 
 fully implement INotifyDataErrorInfo. There are a number of other tutorials about this interface, but
 I don't feel any go into enough depth about what to do when facing a complex hierarchies of models. 
 For this tutorial, I'm going to assume you've seen a few of these tutorials or have tried implementing 
 INotifyDataErrorInfo, so I may skip over some of the more mundane aspects.
+
+<!--more-->
 
 # How INotifyDataErrorInfo Works
 

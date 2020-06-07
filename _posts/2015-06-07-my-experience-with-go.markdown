@@ -15,6 +15,8 @@ a perfect language, far from that. There have been numerous posts about the pros
 of Go on Hackernews and the like, so I'll try to keep this focused on my experience
 building my application.
 
+<!--more-->
+
 MyDailyStuff is a simple monolithic architecture. There's a REST API in Go and a TypeScript
 frontend single-page application. The datastore is ElasticSearch. Coming from a C# and JS
 background, the complete lack of OO design was jarring, but not too limiting for my usecase.

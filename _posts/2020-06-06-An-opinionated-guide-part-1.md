@@ -10,6 +10,8 @@ This is the first in a series of posts about my philosophy around state manageme
 
 In this introduction, I’ll be going over the definition of state management and how it relates to user interfaces. Then I’ll present a rudimentary example and go over its flaws so we can have a better point of reference when going over some frameworks available in the community. In addition to providing a basic summary, I’ll give some of my recommendations on which types of frameworks to consider.
 
+<!--more-->
+
 # User Interfaces
 
 At its core, a UI works by reacting to a series of actions directly or indirectly initiated by a user, such as opening the application, or clicking a button. The logic encapsulating all of these these interactions and responses in software is state management. As developers, the way we choose to model this state has enormous impacts on its maintainability and robustness.

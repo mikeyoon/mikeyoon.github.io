@@ -11,6 +11,8 @@ It's a problem every web startup wants to have: too many users using their web a
 * Push Notifications
 * Template rendering
 
+<!--more-->
+
 ###Too Many Requests
 
 The first problem should be pretty straightforward. If you're making more than a few requests to serve your highly-used pages, then you probably have a lot of room for improvement. Static assets should be combined (I like require.js for JS), and AJAX requests should be consolidated if possible. It is quite common for more complex websites to have expensive onrequest filters and handlers, so it's important to keep requests down to a minimum. Just because you can load everything asynchronously and provide a responsive UI doesn't mean it takes no server resources. In fact, it probably takes more.

@@ -7,6 +7,8 @@ Recently I've added in the foundations for supporting an Android version of an M
 
 Fortunately, a lot of open source authors are providing PCL versions of their libraries or supporting Mono outright. This means I can just simply reference those versions in the specific platform projects. So I was able to continue using [Autofac](https://code.google.com/p/autofac/), [protobuf-net](https://code.google.com/p/protobuf-net/), and many others. 
 
+<!--more-->
+
 I did have to switch out [Membus](https://github.com/flq/MemBus) with [TinyMessenger](https://github.com/grumpydev/TinyMessenger), because Membus used the dynamic features of .NET. That was a time consuming process as those libraries work a little differently. I might make a fork of Membus to not use those features if I have time. I also had to abstract out the logging service since the WPF app uses Log4NET, which isn't mobile-compatible. I also had to abstract out any file access and implement them in platform-specific services.
 
 The biggest part that I have yet to address is how to handle MVVM. I would prefer not to convert everything to a framework like MVVMCross. Currently we use Caliburn.Micro, which was relatively easy to use. I made a copy of our viewmodel csproj file and used the appropriate ifdefs to keep Caliburn out of the Android version. In the meantime, I simply reimplemented all the necessary Caliburn base classes and interfaces in the Android version of the project so at least the Activities can listen for property changes. I don't think it'll be too hard to make something reasonably useful for doing view-binding later.
