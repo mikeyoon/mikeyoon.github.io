@@ -5,7 +5,7 @@ date: 2011-09-13 23:09:40.000000000 -08:00
 ---
 We had a more complicated hql query that needed many joins, and included one join that didn’t involve primary keys. It ended up being pretty slow and the SQL generated was terrible, so I rewrote it into a custom SQL query. The model I needed mapped was an inherited table, so I’d somehow have to get NHibernate to map using data from both tables. There was a gotcha that took be a bit of time to get around. Here’s a kind of obfuscated version of the query.
 
-~~~ csharp
+```csharp
 var blocks = CurrentSession
 .CreateSQLQuery("SELECT {stb.*}, {ev.*}, {ei.*}, {sm.*}, {v.*}, {p.*} " +
                 "FROM TableA stb_1_ " +
@@ -40,6 +40,6 @@ var blocks = CurrentSession
 .SetParameter("rcId", rcId.HasValue ? rcId : (object) DBNull.Value, NHibernateUtil.Guid)
 .SetParameter("scId", scId.HasValue ? scId : (object) DBNull.Value, NHibernateUtil.Guid)
 .SetParameter("pId", pId.HasValue ? pId : (object) DBNull.Value, NHibernateUtil.Guid);
-~~~
+```
 
 So I had to alias TableA as stb_1_ to get nhibernate to map that to my entity TableB. The reason is that NHibernate automatically generates aliases for the sources of your entity data. TableB fields mapped directly to stb, while fields that are a part of TableA were supposed to map to stb_1_. If I left out the alias on that table, NHibernate would complain that it can’t map any of the fields because stb_1_.FieldA (for however many fields you have) doesn’t exist. To get the alias I had to run the query without any aliasing and check the error message. It has a consistent naming convention, so it will continue working unless you change or add tables mapped to the entity.

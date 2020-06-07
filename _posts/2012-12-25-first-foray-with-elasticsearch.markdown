@@ -9,7 +9,7 @@ Recently at work I've been tasked with migrating from our hosted Endeca solution
 
 Biggest issue I had with ElasticSearch was that its faceting was kind of weak. The benefit is that its faceting is really easy to use. You just tell ES what field you want to facet in your query and it will return a facet for it on the fly. Very convenient. The downside is that it's pretty barebones in what you can configure, and what it will return. For example, imagine you have a collection of Events, and it has a field called Category, and it had values like "sports" or "music". If you query the collection and facet Category, you'll get something like this (the syntax isn't exact):
 
-``` json
+```json
 termFacet: [ {
     category: [{
         term: sports,
