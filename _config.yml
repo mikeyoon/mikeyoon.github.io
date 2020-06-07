@@ -3,10 +3,11 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.yaki.org" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
-theme:
+theme_settings:
   # Meta
   title: Mike's Musings
   avatar: 
+  favicon: 
   gravatar: # Email MD5 hash
   description: >
     Spreading positive vibes and optimism through efficient use of sarcasm and lowered expectations.
@@ -18,7 +19,7 @@ theme:
   #   <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
   # header_text_feature_image:
   footer_text: >
-   Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
   # Icons
   rss: false
@@ -28,7 +29,9 @@ theme:
   dribbble:
   facebook:
   flickr:
+  gitlab:
   github: "mikeyoon"
+  gitter:
   google_plus:
   instagram:
   linkedin: https://www.linkedin.com/in/mikeyoon
@@ -46,19 +49,24 @@ theme:
   google_analytics: UA-4030987-2
   disqus_shortname:
   katex: true # Enable if using math markup
+  search: false # Enable the search feature
 
   # Localization strings
   str_follow_on: "Follow on"
   str_rss_follow: "Follow RSS feed"
   str_email: "Email"
-  str_next: "Next"
-  str_prev: "Prev"
+  str_next_post: "Next post"
+  str_previous_post: "Previous post"
+  str_next_page: "Next"
+  str_previous_page: "Prev"
   str_continue_reading: "Continue reading"
+  str_javascript_required_disqus: "Please enable JavaScript to view comments."
+  str_search_no_results: "No results found."
 
   # Colours, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
   google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
-  
+
   # Post navigation
   post_navigation: false
 
@@ -67,7 +75,8 @@ paginate: 8
 paginate_path: "/page:num"
 
 # BUILD SETTINGS
-markdown: redcarpet
+markdown: kramdown
+highlighter: rouge
 syntax-highlighting:
   enabled : true
   css: syntax.css
@@ -77,3 +86,7 @@ kramdown:
 sass:
   sass_dir: _sass
   style: :compressed
+plugins: [jekyll-paginate]
+exclude:
+  - Gemfile
+  - Gemfile.lock

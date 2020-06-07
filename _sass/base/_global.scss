@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+figure {
+  margin: 0;
+}
+// For correct line number width in Github Gists
+.gist table tbody tr td {
+  box-sizing: content-box;
+}
 html {
   background: $background-color;
 }
@@ -22,7 +29,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headings;
-  line-height: 1.3;
+  line-height: 1.2;
   margin: 0.67em 0;
   a {
     color: $text-color;
@@ -52,16 +59,18 @@ table {
   table-layout:fixed;
   width:100%;
   word-wrap:break-word;
-  @media (max-width: 1100px) {
-    overflow-x: scroll;
-    display: inline-block;
-  }
 }
 td,
 th {
   padding: 0.5em 1em;
   border: 1px solid $border-color;
   text-align: left;
+}
+td {
+  vertical-align: top;
+}
+th {
+  vertical-align: bottom;
 }
 table,
 dl,
@@ -82,9 +91,15 @@ p, ol, ul, dl, .math-display {
   line-height: 1.5;
   margin-bottom: 1em;
 }
+// KaTeX math display
 .math-display {
   display: inline-block;
   width: 100%;
+}
+// Lists within lists
+li > ul, li > ol {
+    margin-bottom: 0;
+    margin-left: 1em;
 }
 ol, ul {
   list-style-position: inside;
