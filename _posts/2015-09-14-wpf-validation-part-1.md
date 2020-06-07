@@ -87,52 +87,52 @@ public class ChildViewModel2
 
 To implement this correctly, your viewmodel needs to handle the appropriate items:
 
-1. Whenever a property that you want validated is modified, it has to notify the ErrorsChanged event. 
-2. For example, if we wanted ChildViewModel1 to correctly notify that its AnotherProperty field is too 
-3. short, it might look like this:
+1. Whenever a property that you want validated is modified, it has to notify the ErrorsChanged event.
+   For example, if we wanted ChildViewModel1 to correctly notify that its AnotherProperty field is too 
+   short, it might look like this:
 
-```csharp
-public class ChildViewModel1
-{
-  private string _anotherProperty;
-  public string AnotherProperty
-  {
-    get { return _anotherProperty; }
-    set 
-    { 
-      _anotherProperty = value;
-      OnPropertyChanged();
-      OnErrorsChanged("AnotherProperty");
-    }
-  }
-  
-  public ChildViewModel2 { get; set; }
-  
-  protected OnErrorsChanged(string propertyName)
-  {
-    ErrorsChanged(new DataErrorsChangedEventArgs(propertyName));
-  }
-}
-```
+   ```csharp
+   public class ChildViewModel1
+   {
+     private string _anotherProperty;
+     public string AnotherProperty
+     {
+       get { return _anotherProperty; }
+       set 
+       { 
+         _anotherProperty = value;
+         OnPropertyChanged();
+         OnErrorsChanged("AnotherProperty");
+       }
+     }
+     
+     public ChildViewModel2 { get; set; }
+     
+     protected OnErrorsChanged(string propertyName)
+     {
+       ErrorsChanged(new DataErrorsChangedEventArgs(propertyName));
+     }
+   }
+   ```
 
-Important to note that my example is a hierarchy, and I'm going to assume the views are as well. This
-can open up a lot of complexities if validation of one model requires checking other models in the 
-hierarchy. I'll cover this later.
+   Important to note that my example is a hierarchy, and I'm going to assume the views are as well. This
+   can open up a lot of complexities if validation of one model requires checking other models in the 
+   hierarchy. I'll cover this later.
 
-2. HasErrors must return whether any errors exist on the view model. This is usually straightforward, 
-but in the case of ViewModel1 above, what if you wanted it to return true if any there are any errors 
-in its children or its children's child?
+1. HasErrors must return whether any errors exist on the view model. This is usually straightforward, 
+   but in the case of ViewModel1 above, what if you wanted it to return true if any there are any errors 
+   in its children or its children's child?
 
-3. GetErrors is the easiest to implement in most cases, as it just needs to return the validation errors 
-for the given view model.
+1. GetErrors is the easiest to implement in most cases, as it just needs to return the validation errors 
+   for the given view model.
 
 So above I mentioned what can be some major problems implementing INotifyDataErrorInfo in this example, 
 but here is a full list I've come up with:
 
 1. How to best deal with HasErrors if it's necessary to account for child errors?
-1. If an error occurs in a child view model, how will the parent view get notified to rebind?
-1. If a parent/child viewmodel property is modified, how would the child/parent be notified to rerun 
-validation, assuming there are dependencies in executing validation?
+2. If an error occurs in a child view model, how will the parent view get notified to rebind?
+3. If a parent/child viewmodel property is modified, how would the child/parent be notified to rerun 
+   validation, assuming there are dependencies in executing validation?
 1. When should OnErrorsChanged(String.Empty) ever be called?
 
 # Sample Implementation
