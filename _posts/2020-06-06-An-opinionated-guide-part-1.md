@@ -86,4 +86,4 @@ Examples: [Akita](https://github.com/datorama/akita), [Cycle.js](https://cycle.j
 
 There are many more frameworks and patterns I haven’t listed, all trying to solve the same problem with different tradeoffs. At this time, I’d personally try to steer away from redux-style frameworks, since I’m finding a lot of applications don’t benefit from that level of indirection. So you end up paying the price of so much boilerplate without reaping much reward.
 
-This introduction covered the topic of state management and some patterns/frameworks that are out there. In the next article, I’ll go over the two types of the state, essential and derived, and some approaches to managing them.
+This introduction covered the topic of state management and some patterns/frameworks that are out there. In the [next]({% post_url 2020-06-14-An-opinionated-guide-part-2 %}) article, I’ll go over the two types of the state, essential and derived, and some approaches to managing them.
