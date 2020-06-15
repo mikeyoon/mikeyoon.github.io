@@ -53,7 +53,7 @@ const initialState = {
 // This will be called once with the INIT action below
 function myReducer(state = initialState, action) {
   // Reducers work by switching on the action type and returning a new state object. It does not mutate state in place.
-  // Mutating state in place will cause dirty-checking to fail and rerenders won't happen when needed.
+  // Mutating state in place will cause dirty-checking to fail and re-renders won't happen when needed.
   switch (action.type) {
     case 'LOGOUT':
       return {
@@ -181,7 +181,7 @@ Now in this case, we have the `getFullName` selector that will automatically rec
 
 What really ties this pattern together is Reselect's memoization (most frameworks should have some form of memoization for derived state). It's very simple, only storing the previous values of the input functions and the result function. Each time an action is dispatched, like `someAction` in our example, the two input functions on `getFullNameAndTime` will be called. Also, this action doesn't result in firstName or lastName changing so the input functions will return values equivalent to the last. Since input values are equivalent, the selector will skip calling the result function and just return a reference to the previous value.
 
-This memoization is what allows React to know when to rerender a relevant component, so even if our selector returned a complex object like `{ fullName }` instead, it'd still only rerender when necessary. This will be important if you end up creating a hierarchy of selectors, feeding complex objects from one into another. I'll show this in more detail in a later article. For now, let's just examine how the input functions work.
+This memoization is what allows React to know when to re-render a relevant component, so even if our selector returned a complex object like `{ fullName }` instead, it'd still only re-render when necessary. This will be important if you end up creating a hierarchy of selectors, feeding complex objects from one into another. I'll show this in more detail in a later article. For now, let's just examine how the input functions work.
 
 ## Keep input functions simple
 
@@ -189,7 +189,7 @@ Reselect (and NgRx as well) selectors need to execute their input functions _eve
 
 # You will need to be flexible at times
 
-In an ideal system, all essential state would be handled by simple reducers (or equivalent in non-flux frameworks) as shown above, while derived state is all managed in selectors. Unfortunately, like most software engineering patterns, there are always exceptions. Oftentimes, other criteria (such as performance) can take priority, and having derived state be automatically calculated may not provide the control needed to maintain the user-experience you require. Later on in the series, I'll provide more complex examples that show where it is easier, or required, to choose to manage derivable state in a reducer. For now, just know that you may encounter a situation where it will feel intuitive to stray from the pattern and that's fine as long as you understand the tradeoffs.
+In an ideal system, all essential state would be handled by simple reducers (or equivalent in non-flux frameworks) as shown above, while derived state is all managed in selectors. Unfortunately, like most software engineering patterns, there are always exceptions. Oftentimes, other criteria (such as performance) can take priority, and having derived state be automatically calculated may not provide the control needed to maintain the user-experience you require. Later on in the series, I'll provide more complex examples that show where it is easier, or required, to choose to manage derivable state in a reducer. For now, just know that you may encounter a situation where it will feel intuitive to stray from the pattern and that's fine as long as you understand the trade-offs.
 
 # Conclusion
 
